@@ -1,37 +1,26 @@
 {
-    "name": "YT Bookmarks",
-    "version": "0.1.0",
-    "description": "Saving timestamps in YT videos",
-    "permissions": ["storage", "tabs"],
-    "host_permissions": ["https://*.youtube.com/*"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://*.youtube.com/*"],
-        "js": ["contentScript.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "assets/bookmark.png",
-          "assets/play.png",
-          "assets/delete.png",
-          "assets/save.png"
+        "manifest_version" : 2,
+        "version": "1.0.0",
+        "name":"Water Reminder",
+        "description":"Dummy water reminder extension",
+        "icons":{
+          "128":"./icons/128.png",
+          "48":"./icons/48.png",
+          "32":"./icons/32.png",
+          "16":"./icons/16.png"
+        },
+        "browser_action":{
+          "default_popup":"index.html"
+        },
+        "background":{
+          "scripts":["background.js"],
+          "persistent":false
+        },
+        "permissions":[
+          "alarms",
+          "notifications",
+          "storage",
+          "contextMenus"
         ],
-        "matches": ["https://*.youtube.com/*"]
+        "omnibox": { "keyword" : "stuart"}
       }
-    ],
-    "action": {
-      "default_icon": {
-        "16": "assets/ext-icon.png",
-        "24": "assets/ext-icon.png",
-        "32": "assets/ext-icon.png"
-      },
-      "default_title": "YT Bookmarks",
-      "default_popup": "popup.html"
-    },
-    "manifest_version": 3
-}
